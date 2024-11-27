@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100vw;         /* Zorgt ervoor dat de afbeelding altijd 100% van de viewportbreedte beslaat */
+  height: auto;        /* Zorgt ervoor dat de afbeelding altijd 100% van de viewporthoogte beslaat */
+  object-fit: cover;    /* Zorgt ervoor dat de afbeelding de volledige ruimte vult zonder te rekken */
+  object-position: center; /* Centreert de afbeelding binnen de viewport */
+}
+
+img.first {
+width: 50%; /* Makes the image smaller (50% of the element width) */
+height: auto; /* Maintains the aspect ratio */
+transform: rotate(-10deg); /* Tilts the image slightly */
+object-fit: cover; /* Maintains aspect ratio while fitting */
+object-position: center; /* Centers the image within the frame */
+}
+
+.tekst p {
+    margin-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+
+.main {
+    padding-top: 0; /* Start with zero padding */
+    transition: padding-top 0.3s; /* Optional: smooth transition */
+}

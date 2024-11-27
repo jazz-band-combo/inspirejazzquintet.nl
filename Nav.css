@@ -1,0 +1,216 @@
+/* Reset margin and padding for body and html */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main navigation styling */
+.navigatie {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background-color: var(--navbar-color);
+  transition: background-color 0.3s ease;
+}
+
+.navigatie .logo {
+  margin-left: 20px;
+  font-size: 35px;
+  font-weight: 700;
+  margin-right: auto;
+}
+
+.navigatie-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.navigatie a{
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  padding: 30px 20px;
+  transition: background-color 0.3s, color 0.3s;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a.home-active {
+  color: var(--home-active-color);
+  transition: color 0.3s ease;
+}
+
+a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:active {
+  color: var(--link-hover-color);
+  background-color: var(--navbar-hover-color);
+}
+.subnav {
+  position: relative;
+}
+
+.subnavbtn, .subnavbtn:active {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between text and icon */
+    font-size: 28px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  white-space: nowrap;
+  min-width: 160px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subnav-content a {
+  display: block;
+  padding: 15px 20px;
+  background-color: var(--subnav-background);
+  color: var(--link-color);
+}
+
+.subnav-content a:hover {
+  background-color: var(--navbar-hover-color);
+  color: var(--link-hover-color);
+}
+
+/* Settings Icon in Navbar */
+.instellingen-icon img {
+    width: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.instellingen-icon {
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: var(--icon-color);
+    display: flex;
+    align-items: center;
+}
+
+/* Theme Panel Styles */
+.theme-panel {
+    position: fixed;
+    z-index: 10000 ;
+    bottom: -100%; /* Start off the screen */
+    right: 20px;
+    width: 200px;
+    background-color: var(--navbar-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.5s ease, bottom 0.5s ease;
+}
+
+.theme-panel.show {
+    bottom: 20px; /* Slide up to 20px from the bottom */
+}
+
+.theme-panel button {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.theme-panel button:hover, .theme-panel button:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tekst {
+   padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+       background-color: var(--navbar-color);
+    color: white;
+    text-align: center;
+}
+
+.song-item{
+      background-color: var(--muziek-background) !important;
+}
+/* Default Theme Variables (Normaal) */
+
+
+/* Dark Theme */
+:root {
+    --colorp:white;
+     --muziek-background: #AD8CB2;
+    --home-active-color: pink;
+    --background-color: #121212;
+    --muziek-background;
+    --home-active-color: #AD8CB2;
+    --text-color: #e0e0e0;
+    --navbar-color: rgba(1,1, 1, 0.5);
+    --subnav-background: #3c3c3c;
+    --text-hover-color: #b0bec5;
+    --text-active-color: #ffffff;
+    --navbar-hover-color: #2c2c2c;
+    --navbar-active-color: #1f1f1f;
+    --box-background-color: #1e1e1e;
+    --box-border-color: #424242;
+    --link-color: #c7c7c7;
+    --link-hover-color: #3B1040;
+    --icon-color: #ffffff;
+    --image-filter: grayscale(0%);
+}
+
+
+
+
+/* Apply CSS Variables */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.text-hover:hover {
+    color: var(--text-hover-color);
+}
+
+.box {
+    background-color: var(--box-background-color);
+    border: 1px solid var(--box-border-color);
+    padding: 15px;
+    border-radius: 4px;
+}
+
+img {
+    filter: var(--image-filter);
+}
+

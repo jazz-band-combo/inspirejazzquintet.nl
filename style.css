@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.text-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.easy-listening {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5em;
+    color: #AD8CB2;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.inspire {
+    font-family: 'Playfair Display', serif;
+    font-size: 6em;
+    color: #3B1040;
+    font-weight: 700;
+    transform: rotate(-10deg);
+    display: inline-block;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
