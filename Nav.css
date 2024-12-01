@@ -83,7 +83,7 @@ a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:activ
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.subnav:hover .subnav-content {
+.subnav:hover .subnav-content .subnav:active{
   display: block;
   opacity: 1;
   transform: translateY(0);
