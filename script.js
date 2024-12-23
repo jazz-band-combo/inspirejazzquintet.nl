@@ -16,16 +16,3 @@ function adjustContentPadding() {
 // Event listeners for adjusting content padding on load and resize
 window.addEventListener('load', adjustContentPadding);
 window.addEventListener('resize', adjustContentPadding);
-
-// Logic for managing active state on subnav buttons
-document.querySelectorAll('.subnavbtn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        if (isVerticalMode()) return; // Do nothing if in vertical mode
-
-        const isActive = this.classList.contains('active'); // Check if the button is already active
-        document.querySelectorAll('.subnavbtn').forEach(b => b.classList.remove('active')); // Remove the active class from all buttons
-        if (!isActive) {
-            this.classList.add('active'); // Add the active class to the clicked button
-        }
-    });
-});
