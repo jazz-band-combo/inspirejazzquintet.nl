@@ -206,8 +206,8 @@ img {
 
 @media (max-width: 768px) {
   .navigatie .logo {
+    display:flex;
   }
-
   .navigatie {
     flex-direction: column;
     align-items: flex-start;
