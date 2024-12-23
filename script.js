@@ -1,22 +1,31 @@
-// Functie om de padding onder de navigatiebalk aan te passen op basis van de hoogte
-function adjustContentPadding() {
-    const navbar = document.querySelector('.navigatie'); // Selecteer de navigatiebalk
-    const mainContent = document.querySelector('.main'); // Selecteer de main-content
-    const navbarHeight = navbar.offsetHeight; // Haal de hoogte van de navigatiebalk op
-    mainContent.style.paddingTop = navbarHeight + 'px'; // Pas de padding-top van de main-content aan
+// Function to check if the navbar is in vertical mode
+function isVerticalMode() {
+    return window.innerWidth <= 768; // Adjust the width threshold to match your CSS media query
 }
 
-// Voer de padding-aanpassing uit bij het laden van de pagina en bij het wijzigen van het vensterformaat
-window.addEventListener('load', adjustContentPadding); // Bij het laden van de pagina
-window.addEventListener('resize', adjustContentPadding); // Bij het aanpassen van het vensterformaat
+// Function to adjust content padding based on navbar height
+function adjustContentPadding() {
+    if (isVerticalMode()) return; // Do nothing if in vertical mode
 
-// Subnav-button active class logic
+    const navbar = document.querySelector('.navigatie'); // Select the navigation bar
+    const mainContent = document.querySelector('.main'); // Select the main content
+    const navbarHeight = navbar.offsetHeight; // Get the height of the navigation bar
+    mainContent.style.paddingTop = navbarHeight + 'px'; // Adjust the top padding of the main content
+}
+
+// Event listeners for adjusting content padding on load and resize
+window.addEventListener('load', adjustContentPadding);
+window.addEventListener('resize', adjustContentPadding);
+
+// Logic for managing active state on subnav buttons
 document.querySelectorAll('.subnavbtn').forEach(btn => {
     btn.addEventListener('click', function () {
-        const isActive = this.classList.contains('active'); // Controleer of de knop al actief is
-        document.querySelectorAll('.subnavbtn').forEach(b => b.classList.remove('active')); // Verwijder de active-class van alle knoppen
+        if (isVerticalMode()) return; // Do nothing if in vertical mode
+
+        const isActive = this.classList.contains('active'); // Check if the button is already active
+        document.querySelectorAll('.subnavbtn').forEach(b => b.classList.remove('active')); // Remove the active class from all buttons
         if (!isActive) {
-            this.classList.add('active'); // Voeg de active-class toe aan de geklikte knop als deze niet actief was
+            this.classList.add('active'); // Add the active class to the clicked button
         }
     });
 });
