@@ -1,4 +1,4 @@
-/* Reset margin and padding for body and html */
+/* Globale reset */
 html, body {
   margin: 0;
   padding: 0;
@@ -13,8 +13,9 @@ html, body {
   width: 100%;
   z-index: 1000;
   display: flex;
+  flex-wrap: wrap; /* Sta items toe om te wrappen */
   align-items: center;
-  background-color: var(--navbar-color);
+  background-color: rgba(1, 1, 1, 0.5);
   transition: background-color 0.3s ease;
 }
 
@@ -27,63 +28,66 @@ html, body {
 
 .navigatie-links {
   display: flex;
+  flex-wrap: wrap; /* Sta items toe om te wrappen */
   align-items: center;
   margin-left: auto;
 }
 
-.navigatie a{
+.navigatie-links a {
   font-size: 28px;
   font-weight: bold;
   display: block;
   text-align: center;
   padding: 30px 20px;
   transition: background-color 0.3s, color 0.3s;
-  color: var(--link-color);
+  color: #c7c7c7;
   text-decoration: none;
 }
 
 a.home-active {
-  color: var(--home-active-color);
+  color: #AD8CB2;
   transition: color 0.3s ease;
 }
 
 a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:active {
-  color: var(--link-hover-color);
-  background-color: var(--navbar-hover-color);
+  color: #3B1040;
+  background-color: #2c2c2c;
 }
+
 .subnav {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .subnavbtn, .subnavbtn:active {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Space between text and icon */
-    font-size: 28px;
-    border: none;
-    outline: none;
-    background-color: inherit;
-    font-family: inherit;
-    cursor: pointer;
-    padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Ruimte tussen tekst en icoon */
+  font-size: 28px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 10px 15px;
 }
-
-
 
 .subnav-content {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 0;
+  left: 100%; /* Plaats de dropdown rechts van de subnavbtn */
   white-space: nowrap;
   min-width: 160px;
   z-index: 1;
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  background-color: #3c3c3c;
 }
 
-.subnav:hover .subnav-content .subnav:active{
+.subnav:hover .subnav-content, .subnav:active .subnav-content {
   display: block;
   opacity: 1;
   transform: translateY(0);
@@ -92,125 +96,131 @@ a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:activ
 .subnav-content a {
   display: block;
   padding: 15px 20px;
-  background-color: var(--subnav-background);
-  color: var(--link-color);
+  background-color: #3c3c3c;
+  color: #c7c7c7;
 }
 
 .subnav-content a:hover {
-  background-color: var(--navbar-hover-color);
-  color: var(--link-hover-color);
+  background-color: #2c2c2c;
+  color: #3B1040;
 }
 
-/* Settings Icon in Navbar */
+/* Instellingen icoon in de navbar */
 .instellingen-icon img {
-    width: 24px;
-    cursor: pointer;
-    margin-right: 15px;
+  width: 24px;
+  cursor: pointer;
+  margin-right: 15px;
 }
 
 .instellingen-icon {
-    font-size: 28px;
-    cursor: pointer;
-    margin-right: 15px;
-    color: var(--icon-color);
-    display: flex;
-    align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  margin-right: 15px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
 }
 
-/* Theme Panel Styles */
+/* Theme panel styles */
 .theme-panel {
-    position: fixed;
-    z-index: 10000 ;
-    bottom: -100%; /* Start off the screen */
-    right: 20px;
-    width: 200px;
-    background-color: var(--navbar-color);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: transform 0.5s ease, bottom 0.5s ease;
+  position: fixed;
+  z-index: 10000;
+  bottom: -100%; /* Start buiten het scherm */
+  right: 20px;
+  width: 200px;
+  background-color: rgba(1, 1, 1, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.5s ease, bottom 0.5s ease;
 }
 
 .theme-panel.show {
-    bottom: 20px; /* Slide up to 20px from the bottom */
+  bottom: 20px; /* Schuif omhoog tot 20px van onderen */
 }
 
 .theme-panel button {
-    background: none;
-    border: 1px solid white;
-    color: white;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
 }
 
 .theme-panel button:hover, .theme-panel button:focus {
-    background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .tekst {
-   padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
-       background-color: var(--navbar-color);
-    color: white;
-    text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  background-color: rgba(1, 1, 1, 0.5);
+  color: white;
+  text-align: center;
 }
 
-.song-item{
-      background-color: var(--muziek-background) !important;
-}
-/* Default Theme Variables (Normaal) */
-
-
-/* Dark Theme */
-:root {
-    --colorp:white;
-     --muziek-background: #AD8CB2;
-    --home-active-color: pink;
-    --background-color: #121212;
-    --muziek-background;
-    --home-active-color: #AD8CB2;
-    --text-color: #e0e0e0;
-    --navbar-color: rgba(1,1, 1, 0.5);
-    --subnav-background: #3c3c3c;
-    --text-hover-color: #b0bec5;
-    --text-active-color: #ffffff;
-    --navbar-hover-color: #2c2c2c;
-    --navbar-active-color: #1f1f1f;
-    --box-background-color: #1e1e1e;
-    --box-border-color: #424242;
-    --link-color: #c7c7c7;
-    --link-hover-color: #3B1040;
-    --icon-color: #ffffff;
-    --image-filter: grayscale(0%);
+.song-item {
+  background-color: #AD8CB2 !important;
 }
 
-
-
-
-/* Apply CSS Variables */
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 .text-hover:hover {
-    color: var(--text-hover-color);
+  color: #b0bec5;
 }
 
 .box {
-    background-color: var(--box-background-color);
-    border: 1px solid var(--box-border-color);
-    padding: 15px;
-    border-radius: 4px;
+  background-color: #1e1e1e;
+  border: 1px solid #424242;
+  padding: 15px;
+  border-radius: 4px;
 }
 
 img {
-    filter: var(--image-filter);
+  filter: grayscale(0%);
 }
 
+/* Responsieve styling voor kleinere schermen */
+@media (max-width: 768px) {
+  .navigatie {
+    flex-direction: column; /* Stapel navigatie items verticaal */
+    align-items: flex-start; /* Lijn items links uit */
+  }
+
+  .navigatie .logo {
+    margin-right: 0; /* Zorg dat het logo correct uitlijnt */
+  }
+
+  .navigatie-links {
+    width: 100%; /* Neem volledige breedte */
+    justify-content: flex-start; /* Links uitlijnen */
+    flex-wrap: wrap;
+  }
+
+  .navigatie-links a {
+    width: 100%; /* Laat elke link de volledige breedte innemen */
+    padding: 15px 20px; /* Pas padding aan */
+    text-align: left; /* Lijn tekst links uit */
+  }
+
+  .subnav {
+    display: flex;
+    flex-direction: row; /* Zorg dat de subnav-content rechts van de knop verschijnt */
+    position: relative;
+  }
+
+  .subnav-content {
+    position: absolute;
+    left: 100%; /* Plaats de dropdown rechts van de knop */
+    top: 0; /* Uitlijning op dezelfde hoogte als de knop */
+  }
+}
