@@ -83,7 +83,7 @@ a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:activ
 .subnav-content {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 100%; /* Default: below the button */
   left: 0;
   white-space: nowrap;
   min-width: 160px;
@@ -229,7 +229,7 @@ img {
 
   .subnav-content {
     position: absolute;
-    left: 100%;
-    top: 0;
+    left: 100%; /* Move to the right of the subnavbtn */
+    top: 0; /* Align with the top of the button */
   }
 }
