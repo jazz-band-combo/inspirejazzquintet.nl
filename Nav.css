@@ -206,7 +206,6 @@ img {
 
 @media (max-width: 768px) {
   .navigatie .logo {
-    display: none;
   }
 
   .navigatie {
