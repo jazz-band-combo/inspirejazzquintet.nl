@@ -1,11 +1,9 @@
-/* Globale reset */
 html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Main navigation styling */
 .navigatie {
   position: fixed;
   top: 0;
@@ -13,7 +11,7 @@ html, body {
   width: 100%;
   z-index: 1000;
   display: flex;
-  flex-wrap: wrap; /* Sta items toe om te wrappen */
+  flex-wrap: wrap;
   align-items: center;
   background-color: rgba(1, 1, 1, 0.5);
   transition: background-color 0.3s ease;
@@ -28,7 +26,7 @@ html, body {
 
 .navigatie-links {
   display: flex;
-  flex-wrap: wrap; /* Sta items toe om te wrappen */
+  flex-wrap: wrap;
   align-items: center;
   margin-left: auto;
 }
@@ -63,7 +61,7 @@ a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:activ
 .subnavbtn, .subnavbtn:active {
   display: flex;
   align-items: center;
-  gap: 8px; /* Ruimte tussen tekst en icoon */
+  gap: 8px;
   font-size: 28px;
   border: none;
   outline: none;
@@ -77,7 +75,7 @@ a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:activ
   display: none;
   position: absolute;
   top: 0;
-  left: 100%; /* Plaats de dropdown rechts van de subnavbtn */
+  left: 100%;
   white-space: nowrap;
   min-width: 160px;
   z-index: 1;
@@ -105,7 +103,6 @@ a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:activ
   color: #3B1040;
 }
 
-/* Instellingen icoon in de navbar */
 .instellingen-icon img {
   width: 24px;
   cursor: pointer;
@@ -121,11 +118,10 @@ a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:activ
   align-items: center;
 }
 
-/* Theme panel styles */
 .theme-panel {
   position: fixed;
   z-index: 10000;
-  bottom: -100%; /* Start buiten het scherm */
+  bottom: -100%;
   right: 20px;
   width: 200px;
   background-color: rgba(1, 1, 1, 0.5);
@@ -139,7 +135,7 @@ a:hover, a:focus, a:active, .subnavbtn:hover, .subnavbtn:focus, .subnavbtn:activ
 }
 
 .theme-panel.show {
-  bottom: 20px; /* Schuif omhoog tot 20px van onderen */
+  bottom: 20px;
 }
 
 .theme-panel button {
@@ -189,38 +185,38 @@ img {
   filter: grayscale(0%);
 }
 
-/* Responsieve styling voor kleinere schermen */
 @media (max-width: 768px) {
   .navigatie {
-    flex-direction: column; /* Stapel navigatie items verticaal */
-    align-items: flex-start; /* Lijn items links uit */
+    flex-direction: column;
+    align-items: flex-start;
+    position: static;
   }
 
   .navigatie .logo {
-    margin-right: 0; /* Zorg dat het logo correct uitlijnt */
+    margin-right: 0;
   }
 
   .navigatie-links {
-    width: 100%; /* Neem volledige breedte */
-    justify-content: flex-start; /* Links uitlijnen */
+    width: 100%;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
   .navigatie-links a {
-    width: 100%; /* Laat elke link de volledige breedte innemen */
-    padding: 15px 20px; /* Pas padding aan */
-    text-align: left; /* Lijn tekst links uit */
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
   }
 
   .subnav {
     display: flex;
-    flex-direction: row; /* Zorg dat de subnav-content rechts van de knop verschijnt */
+    flex-direction: row;
     position: relative;
   }
 
   .subnav-content {
     position: absolute;
-    left: 100%; /* Plaats de dropdown rechts van de knop */
-    top: 0; /* Uitlijning op dezelfde hoogte als de knop */
+    left: 100%;
+    top: 0;
   }
 }
