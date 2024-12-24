@@ -197,7 +197,7 @@ img {
 }
 
 @media (max-width: 1024px) {
-  .navigatie .logo {
+  .navigatie, .logo {
     flex-direction: column;
     text-align: center;
   }
