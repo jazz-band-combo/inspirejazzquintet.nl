@@ -16,3 +16,21 @@ function adjustContentPadding() {
 // Event listeners for adjusting content padding on load and resize
 window.addEventListener('load', adjustContentPadding);
 window.addEventListener('resize', adjustContentPadding);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const subnavBtn = document.querySelector(".subnavbtn");
+    const subnavContent = document.querySelector(".subnav-content");
+
+    // Voeg een click event listener toe aan de subnavbtn
+    subnavBtn.addEventListener("click", function () {
+        // Wissel de 'active' class om de subnavigatie te tonen/verbergen
+        subnavContent.classList.toggle("active");
+    });
+
+    // Optioneel: Sluit de subnavigatie als je ergens anders klikt
+    document.addEventListener("click", function (event) {
+        if (!subnavBtn.contains(event.target) && !subnavContent.contains(event.target)) {
+            subnavContent.classList.remove("active");
+        }
+    });
+});
