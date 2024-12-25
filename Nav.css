@@ -204,7 +204,7 @@ img {
 }
 
 @media (max-width: 768px) {
-  .navigatie {
+  .navigatie .logo {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center align the navigation bar */
