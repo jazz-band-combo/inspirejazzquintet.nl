@@ -1,4 +1,3 @@
-/* Globale reset */
 html, body {
   margin: 0;
   padding: 0;
@@ -196,35 +195,40 @@ img {
   filter: grayscale(0%);
 }
 
-
-@media (max-width: 768px) {
-  .navigatie {
-    display: flex;
-    flex-direction: column; /* Zorgt ervoor dat alles onder elkaar komt */
-    align-items: center; /* Centreert de inhoud horizontaal */
-    justify-content: center; /* Centreert de inhoud verticaal */
-    position: static; /* Zorgt ervoor dat het niet vaststaat */
-    width: 100%; /* Past breedte aan scherm aan */
-  }
-
-  .navigatie-links {
-    display: flex;
-    flex-direction: column; /* Zet links onder elkaar */
-    align-items: center; /* Centreert de links */
-    width: 100%; /* Laat links de volledige breedte innemen */
-  }
-
-  .navigatie-links a {
-    display: block; /* Zorgt dat elk link-element zijn eigen rij krijgt */
-    width: 100%; /* Laat links de volledige breedte innemen */
-    padding: 15px 20px; /* Genoeg ruimte voor klikbare links */
-    text-align: center; /* Tekst gecentreerd in elke link */
-  }
-
-  .subnav-content {
-    position: static; /* Zorgt dat de sub-navigatie vloeiend onder de hoofdlink komt */
-    width: 100%; /* Laat subnavigatie ook breedte innemen */
-    text-align: center; /* Subnavigatie tekst gecentreerd */
+/* Responsive styling */
+@media (max-width: 1024px) {
+  .navigatie .logo {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
+@media (max-width: 768px) {
+  .navigatie .logo {
+    display: none;
+  }
+
+  .navigatie {
+    flex-direction: column;
+    align-items: flex-start;
+    position: static;
+  }
+
+  .navigatie-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .navigatie-links a {
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
+  }
+
+  .subnav-content {
+    position: absolute;
+    left: 100%; /* Move to the right of the subnavbtn */
+    top: 0; /* Align with the top of the button */
+  }
+}
