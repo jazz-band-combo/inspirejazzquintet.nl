@@ -196,40 +196,35 @@ img {
   filter: grayscale(0%);
 }
 
-@media (max-width: 1024px) {
-  .navigatie, .logo {
-    flex-direction: column;
-    text-align: center;
-  }
-}
 
 @media (max-width: 768px) {
   .navigatie {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align the navigation bar */
-    justify-content: center; /* Center the content horizontally */
-    position: static;
+    flex-direction: column; /* Zorgt ervoor dat alles onder elkaar komt */
+    align-items: center; /* Centreert de inhoud horizontaal */
+    justify-content: center; /* Centreert de inhoud verticaal */
+    position: static; /* Zorgt ervoor dat het niet vaststaat */
+    width: 100%; /* Past breedte aan scherm aan */
   }
 
-  .navigatie-links .logo {
+  .navigatie-links {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center; /* Center links inside the navigation bar */
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column; /* Zet links onder elkaar */
+    align-items: center; /* Centreert de links */
+    width: 100%; /* Laat links de volledige breedte innemen */
   }
 
   .navigatie-links a {
-    width: auto; /* Adjust link width to fit content */
-    padding: 15px 20px;
-    text-align: center; /* Center align the text inside links */
+    display: block; /* Zorgt dat elk link-element zijn eigen rij krijgt */
+    width: 100%; /* Laat links de volledige breedte innemen */
+    padding: 15px 20px; /* Genoeg ruimte voor klikbare links */
+    text-align: center; /* Tekst gecentreerd in elke link */
   }
 
   .subnav-content {
-    position: absolute;
-    left: 0; /* Align sub-navigation with parent links */
-    top: 100%; /* Place it below the parent navigation */
+    position: static; /* Zorgt dat de sub-navigatie vloeiend onder de hoofdlink komt */
+    width: 100%; /* Laat subnavigatie ook breedte innemen */
+    text-align: center; /* Subnavigatie tekst gecentreerd */
   }
 }
+
