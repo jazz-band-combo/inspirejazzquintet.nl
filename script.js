@@ -34,3 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+window.onload = function() {
+  const audio = document.getElementById("video-fragment");
+  audio.volume = 0.5; // Stel het volume in op 50%
+};
